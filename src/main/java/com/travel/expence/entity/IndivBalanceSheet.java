@@ -4,6 +4,11 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(callSuper=false)
 public class IndivBalanceSheet extends BalanceSheet {
 
     private Traveller traveller;
@@ -59,21 +64,4 @@ public class IndivBalanceSheet extends BalanceSheet {
 	this.setBalanceAmount(balanceAmount);
 	totalBalanceSheet.addBalance(balanceAmount);
     }
-
-    public Traveller getTraveller() {
-	return traveller;
-    }
-
-    public void setTraveller(Traveller traveller) {
-	this.traveller = traveller;
-    }
-
-    public TotalBalanceSheet getTotalBalanceSheet() {
-	return totalBalanceSheet;
-    }
-
-    public void setTotalBalanceSheet(TotalBalanceSheet totalBalanceSheet) {
-	this.totalBalanceSheet = totalBalanceSheet;
-    }
-
 }

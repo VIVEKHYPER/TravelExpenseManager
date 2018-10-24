@@ -2,6 +2,9 @@ package com.travel.expence.entity;
 
 import com.travel.expence.config.Status;
 
+import lombok.Data;
+
+@Data
 public abstract class Transaction {
     private Integer amount;
     private String description;
@@ -27,45 +30,6 @@ public abstract class Transaction {
 	this.description = description;
 	this.initiator = initiator;
 	status = Status.NEW;
-    }
-    public Status getStatus() {
-	return status;
-    }
-
-    public void setStatus(Status status) {
-	this.status = status;
-    }
-
-    public Integer getAmount() {
-	return amount;
-    }
-
-    public void setAmount(Integer amount) {
-	this.amount = amount;
-    }
-
-    public String getDescription() {
-	return description;
-    }
-
-    public void setDescription(String description) {
-	this.description = description;
-    }
-
-    public Traveller getInitiator() {
-	return initiator;
-    }
-
-    public void setInitiator(Traveller initiator) {
-	this.initiator = initiator;
-    }
-
-    public Traveller getReceiver() {
-	return receiver;
-    }
-
-    public void setReceiver(Traveller receiver) {
-	this.receiver = receiver;
     }
 
 }

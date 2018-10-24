@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+import com.travel.expence.service.TransactionManager;
+
+import lombok.Data;
+
+@Data
 public class Traveller {
 
     private String name;
@@ -48,7 +53,7 @@ public class Traveller {
 	TransactionManager transactionManager = TransactionManager.getInstance();
 	transactionManager.processTransaction(credit);
     }
-    
+
     public void lendMoney() {
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Select traveller : ");
@@ -62,7 +67,7 @@ public class Traveller {
 	TransactionManager transactionManager = TransactionManager.getInstance();
 	transactionManager.processTransaction(debit);
     }
-    
+
     public static Traveller selectTraveller() {
 	Traveller traveller = null;
 	boolean exit = false;
@@ -84,31 +89,7 @@ public class Traveller {
 		exit = true;
 	    }
 	} while (exit == false);
-	
+
 	return traveller;
     }
-    
-    public String getName() {
-	return name;
-    }
-
-    public void setName(String name) {
-	this.name = name;
-    }
-
-    public IndivBalanceSheet getIndivBalanceSheet() {
-	return indivBalanceSheet;
-    }
-
-    public void initiateCreditWith(Traveller receiver, Transaction credit) {
-
-    }
-
-    public void initiateDebitWith(Traveller receiver, Transaction debit) {
-
-    }
-
-
-
-
 }
